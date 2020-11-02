@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'MaplestoryOTFBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/MaplestoryOTFBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.1/NEXON Lv1 Gothic OTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+                              
+* {
+    font-family: 'MaplestoryOTFBold';            
+}
+
+body {
+    /* background-image: url('https://source.unsplash.com/twukN12EN7c/1920x1080');  */
+    background-image: url('https://images.unsplash.com/photo-1469050624972-f03b8678e363?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+  }
+
+#overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+    height: 20px;
+}
+
+#time > p {
+    font-family: 'NEXON Lv1 Gothic OTF';
+    font-size: small;
+}
+
+
+

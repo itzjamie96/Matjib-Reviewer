@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container bg-light py-3">
+  <form method="post" action="">
+  {% csrf_token %}
+    <div class="controls">
+      <div class="row">
+        <div class="col-6">
+          <div class="form-group">
+            <label for="title">제목</label>
+            <input id="title" type="text" name="title" class="form-control" disabled value='{{review.title}}'>
+          </div>
+        </div>
+        
+        <div class="col-2">
+          <div class="form-group">
+            <label for="rank">평점</label>
+            <input id="rank" type="number" min="1" max="5" name="rank" class="form-control" disabled value={{review.rank}}>
+          </div>
+        </div>
+        <div class="col" id="time">
+          <p class="mt-4 mb-2 ml-4">작성 시간:{{review.created_at}}</p>
+          <p class="m-0 ml-4">수정 시간:{{review.updated_at}}</p>
+        </div>
+      </div>
+    </div>
+      
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="content">Review</label>
+          <textarea id="content" name="content" class="form-control" rows="6" disabled>{{review.content}}</textarea>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10"></div>
+      <div class="col-2 text-right">
+        <a href="{% url 'community:index' %}" class="btn btn-secondary">돌아가기</a>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
+

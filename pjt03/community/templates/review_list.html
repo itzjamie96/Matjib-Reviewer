@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+  <div class="jumbotron p-4">
+    <div class="container">
+      <h1 class="display-3">Hello, world!</h1>
+      <h4>리뷰를 작성하면 내 리뷰를 실시간 리뷰에서 볼 수 있어요</h4>
+      <p>
+        <a class="btn btn-primary btn-lg mt-3" href="{% url 'community:new_review' %}">리뷰 작성하기 »</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="container p-0">
+
+    <div class="row">
+    {% for review in reviews %}
+      <div class="col-4 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="card-title">
+              <a href="{% url 'community:review_detail' review.pk %}" class="text-reset">{{review.title}}</a>
+            </h4>
+            <p class="card-text">💜 : {{review.rank}}</p>
+            <p id="overflow" class="card-text">{{review.content}}</p>
+            
+          </div>
+        </div>
+      
+      </div>
+
+    {% endfor %}
+    </div>
+  </div>
+
+{% endblock content %}
